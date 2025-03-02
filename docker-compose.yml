@@ -1,0 +1,9 @@
+services:
+  pgvector:
+    image: pgvector/pgvector:pg17
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=demo
+    ports:
+      - 5432:5432
