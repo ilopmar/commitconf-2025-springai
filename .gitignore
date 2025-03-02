@@ -35,3 +35,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# Vaadin
+node_modules/
+frontend/
+src/main/bundles/
