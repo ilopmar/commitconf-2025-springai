@@ -2,7 +2,7 @@ package com.commitconf.springai._02_memory;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
-import org.springframework.ai.chat.memory.InMemoryChatMemory;
+import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +14,9 @@ public class MemoryController {
 
   public MemoryController(ChatClient.Builder builder) {
     this.chatClient = builder
-        .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()))
+        .defaultAdvisors(MessageChatMemoryAdvisor
+            .builder(MessageWindowChatMemory.builder().build())
+            .build())
         .build();
   }
 

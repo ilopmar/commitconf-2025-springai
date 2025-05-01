@@ -19,18 +19,19 @@ repositories {
 }
 
 ext {
-  set('springAiVersion', "1.0.0-M6")
+  set('springAiVersion', "1.0.0-M8")
   set('vaadinVersion', "24.6.5")
 }
 
 dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-web'
 
-//  implementation 'org.springframework.ai:spring-ai-ollama-spring-boot-starter'
-  implementation 'org.springframework.ai:spring-ai-openai-spring-boot-starter'
+//  implementation 'org.springframework.ai:spring-ai-starter-model-ollama'
+  implementation 'org.springframework.ai:spring-ai-starter-model-openai'
 
+  implementation 'org.springframework.ai:spring-ai-advisors-vector-store'
   implementation 'org.springframework.ai:spring-ai-markdown-document-reader'
-  implementation 'org.springframework.ai:spring-ai-pgvector-store-spring-boot-starter'
+  implementation 'org.springframework.ai:spring-ai-starter-vector-store-pgvector'
   implementation 'com.vaadin:vaadin-spring-boot-starter'
 
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
