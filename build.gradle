@@ -35,6 +35,13 @@ dependencies {
   implementation 'com.vaadin:vaadin-spring-boot-starter'
 
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'org.testcontainers:testcontainers'
+  testImplementation 'org.testcontainers:junit-jupiter'
+  testImplementation 'org.assertj:assertj-core'
+
+  testImplementation 'org.mock-server:mockserver-netty:5.15.0'
+  testImplementation 'org.mock-server:mockserver-client-java:5.15.0'
+
   testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
